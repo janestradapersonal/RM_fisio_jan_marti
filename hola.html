@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ca">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ResoView — Les teves resonàncies magnètiques</title>
+  <link rel="stylesheet" href="estils.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>ResoView</h1>
+    <div id="user-area"></div>
+  </header>
+
+  <main class="container">
+    <!-- Login / Register -->
+    <section id="auth" class="card">
+      <h2>Accés</h2>
+      <div id="auth-forms">
+        <div class="auth-block">
+          <h3>Entrar</h3>
+          <input id="login-username" placeholder="Usuari" />
+          <input id="login-password" type="password" placeholder="Contrasenya" />
+          <button id="btn-login">Entrar</button>
+        </div>
+
+        <div class="auth-block">
+          <h3>Registrar</h3>
+          <input id="reg-username" placeholder="Usuari" />
+          <input id="reg-password" type="password" placeholder="Contrasenya" />
+          <button id="btn-register">Registrar</button>
+        </div>
+      </div>
+      <p class="muted">Aquesta demo guarda usuaris només al navegador (localStorage).</p>
+    </section>
+
+    <!-- Main app (hidden fins que s'entra) -->
+    <section id="app" class="hidden">
+      <div class="app-header">
+        <div>
+          <h2 id="profile-title">Perfil</h2>
+          <p id="welcome-line">Benvingut — </p>
+        </div>
+        <div class="actions">
+          <label class="btn file-btn">
+            Importa carpeta d'estudis
+            <input id="folder-input" type="file" webkitdirectory directory multiple />
+          </label>
+          <button id="btn-logout" class="btn">Tancar sessió</button>
+        </div>
+      </div>
+
+      <div class="search-row">
+        <input id="search-input" placeholder="Cerca per nom d'estudi o fitxer..." />
+        <button id="clear-search" class="btn small">Neteja</button>
+      </div>
+
+      <div class="layout">
+        <!-- Left: carpeta / estudi list -->
+        <aside class="side" id="folders-panel">
+          <h3>Estudis / Carpetes</h3>
+          <ul id="folder-list" class="folder-list"></ul>
+        </aside>
+
+        <!-- Right: vista d'imatges -->
+        <section class="main" id="images-panel">
+          <h3 id="images-title">Cap estudi seleccionat</h3>
+          <div id="images-grid" class="grid"></div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <!-- Llista de scripts -->
+  <script src="app.js"></script>
+</body>
+</html>
